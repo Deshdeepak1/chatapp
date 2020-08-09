@@ -16,7 +16,7 @@ def ngrok(port,authtoken):
     
     os.system('./ngrok tcp '+str(port)+' > /dev/null &')
     sleep(10)
-    os.system('link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "tcp://[0-9a-z]*.tcp.ngrok.io:[0-9]*") && echo "Connection link tcp://host:port " : $link')
+    os.system('link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "tcp://[0-9a-z]*.tcp.ngrok.io:[0-9]*") && echo "Connection link  " : $link')
 
 
 def server():
