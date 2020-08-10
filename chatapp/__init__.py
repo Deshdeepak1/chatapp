@@ -1,0 +1,52 @@
+import os
+
+
+name=input('Enter Name: ')                                                                                                                  
+
+print()
+
+o=int(input('1.Server\n2.Client\nEnter Choice: '))
+
+print()
+
+host=''
+
+if o==1:
+
+    if os.environ['HOME']=='/data/data/com.termux/files/home':
+        pass
+    else:
+        os.system('pip3 install pyngrok')
+        print()
+
+
+    port=input('Enter port no. (for default=9999 press Enter): ')
+    
+    if port=='':
+        port=9999 
+    else: 
+        port=int(port)
+
+elif o==2:    
+
+    link=input('Enter connection link ( Press Enter for other method) : ')
+
+    if link=='':
+        host=input('Enter host (for default=localhost press Enter): ')
+        port=input('Enter port no. (for default=9999 press Enter): ')
+        if host=='':
+            host='localhost'
+        if port=='':
+            port=9999
+        else:
+            port=int(port)
+    else:
+        hp=link.split('//')[1]
+        host=hp.split(':')[0]
+        port=int(hp.split(':')[1])
+    
+    print()
+
+else:    
+    print('Enter valid choice.')
+    exit()
