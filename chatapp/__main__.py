@@ -53,13 +53,14 @@ def server(port,name):
     while True:
         c,addr=s.accept()
         c.send(bytes(name,'utf-8'))
-        print('Chatting with: ',c.recv(1024).decode())
+        other=c.recv(1024).decode()
+        print('Chatting with: '+other)
         print()
 
         while True:
-            msg=input('Send message: ')
+            msg=input(name+' : ')
             c.send(bytes(msg,'utf-8'))
-            print('Recieved message: ',c.recv(1024).decode())
+            print(other+' : ',c.recv(1024).decode())
 
 
 def client(host,port,name):
@@ -72,12 +73,13 @@ def client(host,port,name):
         exit()
     
     c.send(bytes(name,'utf-8'))
-    print('Chatting with: ',c.recv(1024).decode())
+    other=c.recv(1024).decode()
+    print('Chatting with: '+other)
     print()
 
     while True:
-        print('Recieved message: ',c.recv(1024).decode())
-        msg=input('Send message: ')
+        print(other+' : ',c.recv(1024).decode())
+        msg=input(name+' : ')
         c.send(bytes(msg,'utf-8'))
 
 if o==1:
