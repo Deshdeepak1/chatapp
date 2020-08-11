@@ -13,13 +13,6 @@ host=''
 
 if o==1:
 
-    if os.environ['HOME']=='/data/data/com.termux/files/home':
-        pass
-    else:
-        os.system('pip3 install pyngrok')
-        print()
-
-
     port=input('Enter port no. (for default=9999 press Enter): ')
     
     if port=='':
