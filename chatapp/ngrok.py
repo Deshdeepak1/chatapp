@@ -6,7 +6,7 @@ def Ngrok(port,authtoken):
 
     print()
 
-    if os.environ['HOME']=='data/data/com.termux/files/home':
+    if os.environ['HOME']=='/data/data/com.termux/files/home':
 
         if authtoken=='':
             pass
