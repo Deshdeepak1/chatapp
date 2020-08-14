@@ -1,4 +1,4 @@
-import os
+import os,requests
 from time import sleep
 
 
@@ -13,8 +13,11 @@ def Ngrok(port,authtoken):
         else:
             os.system('./ngrok authtoken '+authtoken)
         os.system('./ngrok tcp '+str(port)+' > /dev/null &')
-        sleep(10)
-        os.system('link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "tcp://[0-9a-z]*.tcp.ngrok.io:[0-9]*") && echo "Connection link ": $link')
+        sleep(5)
+        res=requests.get('http://127.0.0.1:4040/api/tunnels')
+        false=0
+        link=eval(res.__dict__['_content'].decode())["tunnels"][0]['public_url']
+        print("Connection link : "+link)
 
     else:
         os.system('pip3 install pyngrok')
