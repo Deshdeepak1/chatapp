@@ -13,7 +13,7 @@ def Ngrok(port,authtoken):
         else:
             os.system('./ngrok authtoken '+authtoken)
         os.system('./ngrok tcp '+str(port)+' > /dev/null &')
-        sleep(5)
+        sleep(10)
         res=requests.get('http://127.0.0.1:4040/api/tunnels')
         false=0
         link=eval(res.__dict__['_content'].decode())["tunnels"][0]['public_url']
