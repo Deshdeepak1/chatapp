@@ -16,4 +16,4 @@ A chatapp built in python.
 # Instructions for windows.
  1. git clone https://github.com/Deshdeepak1/chatapp.git OR download zip
  2. cd chatapp  OR move inside folder
- 3. Start guichatapp.PS1 with powershell
+ 3. Start chatapp.PS1 with powershell
