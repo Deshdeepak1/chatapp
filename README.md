@@ -13,7 +13,7 @@ A chatapp built in python.
  3. chmod +x  ./chatapp.sh
  4. ./chatapp.sh
 
-# Instructions for Windows.
+# Instructions for windows.
  1. git clone https://github.com/Deshdeepak1/chatapp.git OR download zip
  2. cd chatapp  OR move inside folder
  3. Start guichatapp.PS1 with powershell
