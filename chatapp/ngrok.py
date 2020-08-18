@@ -1,12 +1,20 @@
-import os,requests
+import os
+
+try:
+    import requests
+except:
+    os.system('pip3 install requests')
+    import requests
+
 from time import sleep
 
+HOME=os.environ.get('HOME')
 
 def Ngrok(port,authtoken):
 
     print()
 
-    if os.environ['HOME']=='/data/data/com.termux/files/home':
+    if HOME=='/data/data/com.termux/files/home':
 
         if authtoken=='':
             pass
