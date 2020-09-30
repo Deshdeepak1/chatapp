@@ -16,11 +16,12 @@ def server(port,name):
 
     ng=input("Enter 1 for ngrok (Press Enter to not use ngrok.) : ")
 
-    if ng=='':
+    if not ng:
         print('Starting without ngrok.')
     elif int(ng)==1:
         authtoken=input('Enter authtoken (Press Enter to not change.) : ')
-        Ngrok(port,authtoken)
+        link=Ngrok(port,authtoken)
+        print("Connection link:",link)
 
     print()
 

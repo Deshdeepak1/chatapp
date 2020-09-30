@@ -1,6 +1,3 @@
-import socket
-import os
-from time import sleep
 from chatapp import o,host,port,name
 from .server import server
 from .client import client    

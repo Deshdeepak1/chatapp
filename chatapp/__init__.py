@@ -1,5 +1,3 @@
-import os
-
 
 name=input('Enter Name: ')                                                                                                                  
 
@@ -15,7 +13,7 @@ if o==1:
 
     port=input('Enter port no. (for default=9999 press Enter): ')
     
-    if port=='':
+    if not port:
         port=9999 
     else: 
         port=int(port)
@@ -24,12 +22,12 @@ elif o==2:
 
     link=input('Enter connection link ( Press Enter for other method) : ')
 
-    if link=='':
+    if not link:
         host=input('Enter host (for default=localhost press Enter): ')
         port=input('Enter port no. (for default=9999 press Enter): ')
-        if host=='':
+        if not host:
             host='localhost'
-        if port=='':
+        if not port:
             port=9999
         else:
             port=int(port)
